@@ -1,14 +1,14 @@
-use serde::{Serialize, Deserialize};
-use uuid::Uuid;
 use chrono::{DateTime, Utc};
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LogEvent {
     pub id: Uuid,
     pub timestamp: DateTime<Utc>,
     pub service: String,
-    pub level: String, 
+    pub level: String,
     pub message: String,
     pub fields: HashMap<String, String>,
 }
@@ -21,4 +21,3 @@ pub struct Flow {
     pub end_time: DateTime<Utc>,
     pub correlation_type: String,
 }
-

@@ -1,7 +1,7 @@
 use crate::models::LogEvent;
+use anyhow::Result;
 use chrono::{DateTime, Utc};
 use uuid::Uuid;
-use anyhow::Result;
 
 pub fn ingest_file(_path: &str) -> Result<Vec<LogEvent>> {
     // fake event for proof of life
