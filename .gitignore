@@ -1,0 +1,60 @@
+############################
+# Global ignores
+############################
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################
+# Rust (backend/)
+############################
+
+# Rust build artifacts
+target/
+Cargo.lock
+
+# SQLx compile-time cache
+.sqlx/
+
+############################
+# Node (frontend/)
+############################
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+############################
+# WSL misc (super rare cases)
+############################
+
+# VS Code server (if ever generated locally)
+.vscode-server/
+
+############################
+# Random junk
+############################
+
+*.tmp
+*.swp
+*.bak
+*.old
+
+
+# Added by cargo
+
+/target
