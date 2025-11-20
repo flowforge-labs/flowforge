@@ -8,7 +8,7 @@ mod models;
 #[tokio::main]
 async fn main() {
     // ingest.rs test
-    let test_event = ingest::ingest_file("samples/test.json").unwrap();
+    let test_event = ingest::ingest_file("samples/test.txt").unwrap();
     println!("Ingested {} events", test_event.len());
 
     let app = Router::new().route("/health", get(|| async { "OK" }));
