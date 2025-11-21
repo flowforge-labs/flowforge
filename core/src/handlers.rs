@@ -1,4 +1,4 @@
-use axum::{Json};
+use axum::Json;
 use serde_json::json;
 
 pub async fn reload_logs_handler() -> Json<serde_json::Value> {
