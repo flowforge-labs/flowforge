@@ -2,7 +2,7 @@
 crate-type = ["lib"]
 
 [package]
-name = "core"
+name = "flowforge_core"
 version = "0.1.0"
 edition = "2024"
 

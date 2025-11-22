@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Ensure we’re in the backend directory before checking formatting
-BACKEND_DIR="$(git rev-parse --show-toplevel)/backend"
+BACKEND_DIR="$(git rev-parse --show-toplevel)/core"
 
 echo "Checking Rust formatting in backend..."
 cd "$BACKEND_DIR" || exit 1
@@ -10,7 +10,7 @@ cargo fmt --all -- --check
 FORMAT_STATUS=$?
 
 if [ $FORMAT_STATUS -ne 0 ]; then
-  echo "❌ Rust formatting check failed in backend. Run 'cargo fmt' in backend/ and try again."
+  echo "❌ Rust formatting check failed in core. Run 'cargo fmt' in core/ and try again."
   exit 1
 fi
 

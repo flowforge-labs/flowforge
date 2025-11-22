@@ -1,87 +1,131 @@
-############################
-# Global ignores
-############################
+################################################################################
+# GLOBAL REPO IGNORE
+################################################################################
 
-# OS files
-.DS_Store
-Thumbs.db
-
-# Editor folders
-.vscode/
-.idea/
-
-# Logs
-*.log
+# Node
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
 
-############################
-# Rust (backend/)
-############################
+# Env vars
+.env
+.env.*
 
-# Rust build artifacts
-target/
-Cargo.lock
 
-# SQLx compile-time cache
-.sqlx/
-
-############################
-# Node (frontend/)
-############################
-
-# Dependencies
-node_modules/
+################################################################################
+# FRONTEND (React + Vite + TypeScript)
+################################################################################
 
 # Build output
-dist/
+desktop/dist/
+desktop/.vite/
+desktop/.parcel-cache/
+desktop/.cache/
 
-############################
-# WSL misc (super rare cases)
-############################
+# Vite local server metadata
+desktop/.vite-inspect/
 
-# VS Code server (if ever generated locally)
-.vscode-server/
+# TypeScript
+desktop/tsconfig.tsbuildinfo
+desktop/*.tsbuildinfo
 
-############################
-# Random junk
-############################
+# IDE noise
+desktop/.idea/
+desktop/.vscode/
+desktop/*.sw?
+desktop/*~
 
-*.tmp
-*.swp
-*.bak
-*.old
-
-
-# Added by cargo
-
-/target
-
-
-# react + vite
 # Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+desktop/npm-debug.log*
+desktop/logs/
+desktop/debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+################################################################################
+# TAURI (Rust + Webview)
+################################################################################
+
+# Tauri build output
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+
+# Tauri updater artifacts
+desktop/src-tauri/updater/
+desktop/src-tauri/bundled/
+desktop/src-tauri/icons-generated/
+
+# Wry / Webview2 cache
+desktop/src-tauri/.webview2/
+desktop/src-tauri/WebView2/*
+desktop/src-tauri/**/*.pdb
+
+
+################################################################################
+# RUST (workspace + crates)
+################################################################################
+
+# Rust compiled artifacts
+target/
+core/target/
+desktop/src-tauri/target/
+
+# Cargo metadata
+Cargo.lock
+core/Cargo.lock
+desktop/src-tauri/Cargo.lock
+
+# Rust toolchain caches
+*.rs.bk
+core/**/*.rs.bk
+
+# Rust analyzer
+.rustup/
+.cargo/
+rustfmt.toml.bk
+
+
+################################################################################
+# EDITORS + OS JUNK
+################################################################################
+
+# Common IDE dirs
+.vscode/
+.idea/
+*.iml
+
+# MacOS
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# WSL
+*.wslg
+.wsl*
+
+# JetBrains
+*.ipr
+*.iws
+*.bak
+out/
+
+
+################################################################################
+# GIT HOOKS / TOOLING
+################################################################################
+
+# Husky
+.husky/_/
+.husky/_
+.husky-old/
+
+# Commitlint temp files
+.commitlintcache
