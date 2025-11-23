@@ -16,3 +16,4 @@ anyhow = "1"
 uuid = { version = "1", features = ["serde", "v4"] }
 chrono = { version = "0.4", features = ["serde"] }
 notify = "8.2.0"
+thiserror = "2"
